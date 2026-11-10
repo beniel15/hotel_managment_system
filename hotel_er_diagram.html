@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Saravana Grand - High-Definition ER Diagram</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #1e293b;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #334155;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2);
+    }
+    .title h1 {
+      font-size: 20px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .title p {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+    }
+    .btn {
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: #7b1123;
+      color: #ffffff;
+    }
+    .btn-primary:hover {
+      background: #9f1239;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: #334155;
+      color: #ffffff;
+    }
+    .btn-secondary:hover {
+      background: #475569;
+    }
+    .canvas-container {
+      flex: 1;
+      padding: 24px;
+      overflow: auto;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background: #0f172a;
+    }
+    .diagram-wrapper {
+      background: #f8fafc;
+      border-radius: 16px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      padding: 16px;
+      max-width: 100%;
+    }
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 2260px;
+    }
+    @media print {
+      body { background: white; color: black; }
+      header { display: none; }
+      .diagram-wrapper { box-shadow: none; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">
+      <h1>🏨 Hotel Saravana Grand — High-Resolution ER Diagram</h1>
+      <p>MERN Stack Architecture • All Cardinalities (1:1, 1:N, M:N) • Primary &amp; Foreign Keys • Physical 20-Room Inventory</p>
+    </div>
+    <div class="actions">
+      <a href="./hotel_er_diagram.png" download="hotel_saravana_er_diagram.png" class="btn btn-primary">
+        📥 Download High-Res PNG
+      </a>
+      <a href="./hotel_er_diagram.svg" download="hotel_saravana_er_diagram.svg" class="btn btn-secondary">
+        🎨 Download Scalable SVG
+      </a>
+      <button onclick="window.print()" class="btn btn-secondary">
+        🖨️ Print / Save as PDF
+      </button>
+    </div>
+  </header>
+
+  <div class="canvas-container">
+    <div class="diagram-wrapper">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2260 1440" width="2260" height="1440" style="background:#F8FAFC; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <!-- Drop Shadow Filters -->
+    <filter id="shadow" x="-5%" y="-5%" width="112%" height="114%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.08"/>
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.05"/>
+    </filter>
+    <filter id="badgeShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+
+    <!-- Marker Arrowheads -->
+    <marker id="arrowBurgundy" markerWidth="10" markerHeight="10" refX="7" refY="3.5" orient="auto">
+      <polygon points="0 0, 8 3.5, 0 7" fill="#7B1123" />
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="7" refY="3.5" orient="auto">
+      <polygon points="0 0, 8 3.5, 0 7" fill="#2563EB" />
+    </marker>
+    <marker id="arrowEmerald" markerWidth="10" markerHeight="10" refX="7" refY="3.5" orient="auto">
+      <polygon points="0 0, 8 3.5, 0 7" fill="#059669" />
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="7" refY="3.5" orient="auto">
+      <polygon points="0 0, 8 3.5, 0 7" fill="#7C3AED" />
+    </marker>
+    <marker id="arrowAmber" markerWidth="10" markerHeight="10" refX="7" refY="3.5" orient="auto">
+      <polygon points="0 0, 8 3.5, 0 7" fill="#D97706" />
+    </marker>
+    <marker id="arrowSlate" markerWidth="10" markerHeight="10" refX="7" refY="3.5" orient="auto">
+      <polygon points="0 0, 8 3.5, 0 7" fill="#64748B" />
+    </marker>
+  </defs>
+
+  <!-- Background Grid Pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1.5" fill="#E2E8F0" />
+  </pattern>
+  <rect width="2260" height="1440" fill="url(#grid)" />
+
+  <!-- Top Title Banner -->
+  <rect x="50" y="24" width="2160" height="64" rx="12" fill="#7B1123" filter="url(#shadow)" />
+  <text x="80" y="64" font-size="24" font-weight="800" fill="#FFFFFF" letter-spacing="0.5">HOTEL SARAVANA GRAND - ENTITY-RELATIONSHIP (ER) ARCHITECTURE DIAGRAM</text>
+  <text x="1600" y="63" font-size="15" font-weight="600" fill="#FECDD3">MERN Stack | Property Management &amp; Reservation Engine | Full Schema &amp; Cardinality</text>
+
+  <!-- ==================== RELATIONSHIP CONNECTIONS (LINES & PATHS) ==================== -->
+
+  <!-- 1. ROOM_TYPE to ROOM (1 : N) -->
+  <path d="M 230 420 L 230 500" stroke="#831843" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowBurgundy)"/>
+  <!-- Badge on Line -->
+  <g transform="translate(190, 448)">
+    <rect x="0" y="0" width="80" height="24" rx="12" fill="#FCE7F3" stroke="#831843" stroke-width="1.5"/>
+    <text x="40" y="16" font-size="12" font-weight="700" fill="#831843" text-anchor="middle">1 : N</text>
+  </g>
+
+  <!-- 2. ROOM_TYPE to BOOKING (1 : N) -->
+  <path d="M 410 240 Q 640 180 910 320" fill="none" stroke="#831843" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#arrowBurgundy)"/>
+  <g transform="translate(620, 205)">
+    <rect x="0" y="0" width="130" height="24" rx="12" fill="#FCE7F3" stroke="#831843" stroke-width="1.5"/>
+    <text x="65" y="16" font-size="12" font-weight="700" fill="#831843" text-anchor="middle">1 : N (booked_as)</text>
+  </g>
+
+  <!-- 3. ROOM to MAINTENANCE (1 : N) -->
+  <path d="M 230 830 L 230 910" stroke="#EA580C" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowBurgundy)"/>
+  <g transform="translate(190, 858)">
+    <rect x="0" y="0" width="80" height="24" rx="12" fill="#FFEDD5" stroke="#EA580C" stroke-width="1.5"/>
+    <text x="40" y="16" font-size="12" font-weight="700" fill="#9A3412" text-anchor="middle">1 : N</text>
+  </g>
+
+  <!-- 4. ROOM to ROOM_ALLOCATION (1 : N) -->
+  <path d="M 410 650 L 490 650" stroke="#059669" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowEmerald)"/>
+  <g transform="translate(425, 625)">
+    <rect x="0" y="0" width="55" height="22" rx="11" fill="#D1FAE5" stroke="#059669" stroke-width="1.5"/>
+    <text x="27" y="15" font-size="11" font-weight="700" fill="#065F46" text-anchor="middle">1 : N</text>
+  </g>
+
+  <!-- 5. BOOKING to ROOM_ALLOCATION (1 : N) -->
+  <path d="M 910 650 L 830 650" stroke="#7C3AED" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowPurple)"/>
+  <g transform="translate(845, 625)">
+    <rect x="0" y="0" width="55" height="22" rx="11" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.5"/>
+    <text x="27" y="15" font-size="11" font-weight="700" fill="#5B21B6" text-anchor="middle">1 : N</text>
+  </g>
+
+  <!-- Notice: BOOKING to ROOM is M:N via Bridge -->
+  <g transform="translate(490, 480)">
+    <rect x="0" y="0" width="340" height="26" rx="6" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="170" y="17" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">⚡ RESOLVES (M : N) BETWEEN ROOM AND BOOKING</text>
+  </g>
+
+  <!-- 6. USER to BOOKING (1 : N) -->
+  <path d="M 1430 260 Q 1370 260 1330 320" fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowBlue)"/>
+  <g transform="translate(1335, 235)">
+    <rect x="0" y="0" width="105" height="24" rx="12" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.5"/>
+    <text x="52" y="16" font-size="12" font-weight="700" fill="#1E40AF" text-anchor="middle">1 : N (places)</text>
+  </g>
+
+  <!-- 7. BOOKING to PAYMENT (1 : 1) -->
+  <path d="M 1120 940 L 1120 1010" stroke="#D97706" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowAmber)"/>
+  <g transform="translate(1060, 965)">
+    <rect x="0" y="0" width="120" height="24" rx="12" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+    <text x="60" y="16" font-size="12" font-weight="700" fill="#92400E" text-anchor="middle">1 : 1 (settled_by)</text>
+  </g>
+
+  <!-- 8. BOOKING to REVIEW (1 : 0..1) -->
+  <path d="M 1330 650 L 1430 650" stroke="#0D9488" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowEmerald)"/>
+  <g transform="translate(1340, 625)">
+    <rect x="0" y="0" width="80" height="24" rx="12" fill="#CCFBF1" stroke="#0D9488" stroke-width="1.5"/>
+    <text x="40" y="16" font-size="12" font-weight="700" fill="#0F766E" text-anchor="middle">1 : 0..1</text>
+  </g>
+
+  <!-- 9. USER to REVIEW (1 : N) -->
+  <path d="M 1610 440 L 1610 520" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrowBlue)"/>
+  <g transform="translate(1570, 468)">
+    <rect x="0" y="0" width="80" height="24" rx="12" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.5"/>
+    <text x="40" y="16" font-size="12" font-weight="700" fill="#1E40AF" text-anchor="middle">1 : N</text>
+  </g>
+
+  <!-- 10. USER to NOTIFICATION (1 : N) -->
+  <path d="M 1790 220 L 1870 220" stroke="#64748B" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrowSlate)"/>
+  <g transform="translate(1805, 195)">
+    <rect x="0" y="0" width="55" height="22" rx="11" fill="#F1F5F9" stroke="#64748B" stroke-width="1.5"/>
+    <text x="27" y="15" font-size="11" font-weight="700" fill="#334155" text-anchor="middle">1 : N</text>
+  </g>
+
+  <!-- 11. USER (Staff) to MAINTENANCE (1 : N) -->
+  <path d="M 1430 380 Q 900 460 410 1020" fill="none" stroke="#EA580C" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrowBurgundy)"/>
+  <g transform="translate(730, 770)">
+    <rect x="0" y="0" width="130" height="22" rx="11" fill="#FFEDD5" stroke="#EA580C" stroke-width="1.2"/>
+    <text x="65" y="15" font-size="11" font-weight="700" fill="#9A3412" text-anchor="middle">1 : N (reported_by)</text>
+  </g>
+
+
+  <!-- ==================== ENTITY CARDS ==================== -->
+
+  <!-- ENTITY 1: ROOM_TYPE (Top Left) -->
+  <g transform="translate(50, 110)" filter="url(#shadow)">
+    <!-- Box Container -->
+    <rect x="0" y="0" width="360" height="310" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <!-- Header -->
+    <path d="M 0 10 Q 0 0 10 0 L 350 0 Q 360 0 360 10 L 360 48 L 0 48 Z" fill="#831843" />
+    <text x="18" y="31" font-size="17" font-weight="800" fill="#FFFFFF">ROOM_TYPE</text>
+    <text x="340" y="30" font-size="12" font-weight="700" fill="#FBCFE8" text-anchor="end">Master Category</text>
+    
+    <!-- Attributes -->
+    <g transform="translate(18, 72)" font-size="13" font-family="monospace">
+      <!-- Row PK -->
+      <text x="0" y="0" font-weight="800" fill="#DC2626">PK</text>
+      <text x="35" y="0" font-weight="700" fill="#0F172A">typeId</text>
+      <text x="220" y="0" fill="#64748B">String (rt-standard..)</text>
+      
+      <text x="0" y="26" font-weight="700" fill="#0F172A">name</text>
+      <text x="220" y="26" fill="#64748B">String (Standard..)</text>
+
+      <text x="0" y="52" font-weight="700" fill="#0F172A">occupancy</text>
+      <text x="220" y="52" fill="#059669" font-weight="700">Number (3, 5, 9)</text>
+
+      <text x="0" y="78" font-weight="700" fill="#0F172A">pricePerNight</text>
+      <text x="220" y="78" fill="#7B1123" font-weight="700">Number (₹999..)</text>
+
+      <text x="0" y="104" font-weight="700" fill="#0F172A">dayStayPrice</text>
+      <text x="220" y="104" fill="#7B1123" font-weight="700">Number (₹1399..)</text>
+
+      <text x="0" y="130" font-weight="700" fill="#0F172A">bedType</text>
+      <text x="220" y="130" fill="#64748B">String (King/Twin)</text>
+
+      <text x="0" y="156" font-weight="700" fill="#0F172A">amenities</text>
+      <text x="220" y="156" fill="#64748B">Array&lt;String&gt;</text>
+
+      <text x="0" y="182" font-weight="700" fill="#0F172A">totalInventory</text>
+      <text x="220" y="182" fill="#0284C7" font-weight="700">Number (10, 6, 4)</text>
+
+      <line x1="-5" y1="200" x2="330" y2="200" stroke="#F1F5F9" stroke-width="1.5"/>
+      <text x="0" y="218" font-size="11" font-family="sans-serif" fill="#64748B">Total Inventory = 20 Rooms (3 Floors)</text>
+    </g>
+  </g>
+
+
+  <!-- ENTITY 2: ROOM (Middle Left - Physical Inventory) -->
+  <g transform="translate(50, 520)" filter="url(#shadow)">
+    <rect x="0" y="0" width="360" height="310" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <path d="M 0 10 Q 0 0 10 0 L 350 0 Q 360 0 360 10 L 360 48 L 0 48 Z" fill="#065F46" />
+    <text x="18" y="31" font-size="17" font-weight="800" fill="#FFFFFF">ROOM</text>
+    <text x="340" y="30" font-size="12" font-weight="700" fill="#A7F3D0" text-anchor="end">Physical Unit (20 Total)</text>
+    
+    <g transform="translate(18, 72)" font-size="13" font-family="monospace">
+      <text x="0" y="0" font-weight="800" fill="#DC2626">PK</text>
+      <text x="35" y="0" font-weight="700" fill="#0F172A">roomId</text>
+      <text x="220" y="0" fill="#64748B">ObjectId / String</text>
+
+      <text x="0" y="26" font-weight="800" fill="#2563EB">UQ</text>
+      <text x="35" y="26" font-weight="700" fill="#0F172A">roomNumber</text>
+      <text x="220" y="26" fill="#065F46" font-weight="700">String (101-304)</text>
+
+      <text x="0" y="52" font-weight="800" fill="#D97706">FK</text>
+      <text x="35" y="52" font-weight="700" fill="#0F172A">typeId</text>
+      <text x="220" y="52" fill="#64748B">RoomType.typeId</text>
+
+      <text x="0" y="78" font-weight="700" fill="#0F172A">floor</text>
+      <text x="220" y="78" fill="#2563EB" font-weight="700">Number (1, 2, 3)</text>
+
+      <text x="0" y="104" font-weight="700" fill="#0F172A">status</text>
+      <text x="220" y="104" fill="#DC2626" font-weight="700">Enum (Avail|Occ..)</text>
+
+      <text x="0" y="130" font-weight="700" fill="#0F172A">capacity</text>
+      <text x="220" y="130" fill="#64748B">Number (3, 5, 9)</text>
+
+      <text x="0" y="156" font-weight="700" fill="#0F172A">maintenanceNotes</text>
+      <text x="220" y="156" fill="#64748B">String</text>
+
+      <text x="0" y="182" font-weight="700" fill="#0F172A">isClean</text>
+      <text x="220" y="182" fill="#64748B">Boolean</text>
+
+      <line x1="-5" y1="200" x2="330" y2="200" stroke="#F1F5F9" stroke-width="1.5"/>
+      <text x="0" y="218" font-size="11" font-family="sans-serif" fill="#64748B">F1: 101-110 | F2: 201-206 | F3: 301-304</text>
+    </g>
+  </g>
+
+
+  <!-- ENTITY 3: MAINTENANCE (Bottom Left) -->
+  <g transform="translate(50, 930)" filter="url(#shadow)">
+    <rect x="0" y="0" width="360" height="280" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <path d="M 0 10 Q 0 0 10 0 L 350 0 Q 360 0 360 10 L 360 48 L 0 48 Z" fill="#9A3412" />
+    <text x="18" y="31" font-size="17" font-weight="800" fill="#FFFFFF">MAINTENANCE</text>
+    <text x="340" y="30" font-size="12" font-weight="700" fill="#FED7AA" text-anchor="end">Room Service Log</text>
+    
+    <g transform="translate(18, 72)" font-size="13" font-family="monospace">
+      <text x="0" y="0" font-weight="800" fill="#DC2626">PK</text>
+      <text x="35" y="0" font-weight="700" fill="#0F172A">maintenanceId</text>
+      <text x="220" y="0" fill="#64748B">String (MNT-..)</text>
+
+      <text x="0" y="26" font-weight="800" fill="#D97706">FK</text>
+      <text x="35" y="26" font-weight="700" fill="#0F172A">roomNumber</text>
+      <text x="220" y="26" fill="#065F46">Room.roomNumber</text>
+
+      <text x="0" y="52" font-weight="800" fill="#D97706">FK</text>
+      <text x="35" y="52" font-weight="700" fill="#0F172A">reportedBy</text>
+      <text x="220" y="52" fill="#64748B">User.userId / Name</text>
+
+      <text x="0" y="78" font-weight="700" fill="#0F172A">issueDescription</text>
+      <text x="220" y="78" fill="#64748B">String (AC cooling..)</text>
+
+      <text x="0" y="104" font-weight="700" fill="#0F172A">severity</text>
+      <text x="220" y="104" fill="#DC2626" font-weight="700">Low|Med|High|Crit</text>
+
+      <text x="0" y="130" font-weight="700" fill="#0F172A">status</text>
+      <text x="220" y="130" fill="#D97706" font-weight="700">Reported|Resolved</text>
+
+      <text x="0" y="156" font-weight="700" fill="#0F172A">scheduledDate</text>
+      <text x="220" y="156" fill="#64748B">Date</text>
+
+      <line x1="-5" y1="174" x2="330" y2="174" stroke="#F1F5F9" stroke-width="1.5"/>
+      <text x="0" y="192" font-size="11" font-family="sans-serif" fill="#64748B">Blocks room from customer searches</text>
+    </g>
+  </g>
+
+
+  <!-- ENTITY 4: ROOM_ALLOCATION (Middle Bridge - Resolving M:N) -->
+  <g transform="translate(485, 520)" filter="url(#shadow)">
+    <rect x="0" y="0" width="350" height="290" rx="10" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="2"/>
+    <path d="M 0 10 Q 0 0 10 0 L 340 0 Q 350 0 350 10 L 350 48 L 0 48 Z" fill="#6D28D9" />
+    <text x="18" y="31" font-size="16" font-weight="800" fill="#FFFFFF">ROOM_ALLOCATION</text>
+    <text x="335" y="30" font-size="11" font-weight="700" fill="#DDD6FE" text-anchor="end">Bridge Sub-Entity</text>
+    
+    <g transform="translate(18, 72)" font-size="13" font-family="monospace">
+      <text x="0" y="0" font-weight="800" fill="#DC2626">PK</text>
+      <text x="35" y="0" font-weight="700" fill="#0F172A">allocationId</text>
+      <text x="210" y="0" fill="#64748B">String (UUID)</text>
+
+      <text x="0" y="26" font-weight="800" fill="#D97706">FK</text>
+      <text x="35" y="26" font-weight="700" fill="#0F172A">bookingId</text>
+      <text x="210" y="26" fill="#7B1123">Booking.bookingId</text>
+
+      <text x="0" y="52" font-weight="800" fill="#D97706">FK</text>
+      <text x="35" y="52" font-weight="700" fill="#0F172A">roomNumber</text>
+      <text x="210" y="52" fill="#065F46">Room.roomNumber</text>
+
+      <text x="0" y="78" font-weight="700" fill="#0F172A">floor</text>
+      <text x="210" y="78" fill="#2563EB" font-weight="700">Number (1, 2, 3)</text>
+
+      <text x="0" y="104" font-weight="700" fill="#0F172A">checkInStatus</text>
+      <text x="210" y="104" fill="#059669" font-weight="700">Pending|CheckedIn</text>
+
+      <text x="0" y="130" font-weight="700" fill="#0F172A">checkInTime</text>
+      <text x="210" y="130" fill="#64748B">Date / Timestamp</text>
+
+      <text x="0" y="156" font-weight="700" fill="#0F172A">checkOutTime</text>
+      <text x="210" y="156" fill="#64748B">Date / Timestamp</text>
+
+      <line x1="-5" y1="174" x2="320" y2="174" stroke="#F1F5F9" stroke-width="1.5"/>
+      <text x="0" y="192" font-size="11" font-family="sans-serif" fill="#6D28D9" font-weight="600">Supports Multi-Room Reservations</text>
+    </g>
+  </g>
+
+
+  <!-- ENTITY 5: BOOKING (Center Hub) -->
+  <g transform="translate(910, 240)" filter="url(#shadow)">
+    <rect x="0" y="0" width="420" height="700" rx="12" fill="#FFFFFF" stroke="#7B1123" stroke-width="2.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 408 0 Q 420 0 420 12 L 420 54 L 0 54 Z" fill="#7B1123" />
+    <text x="20" y="35" font-size="20" font-weight="800" fill="#FFFFFF">BOOKING</text>
+    <text x="400" y="34" font-size="13" font-weight="700" fill="#FECDD3" text-anchor="end">Central Transaction</text>
+    
+    <g transform="translate(20, 80)" font-size="13" font-family="monospace">
+      <text x="0" y="0" font-weight="800" fill="#DC2626">PK</text>
+      <text x="35" y="0" font-weight="700" fill="#0F172A">bookingId</text>
+      <text x="260" y="0" fill="#7B1123" font-weight="800">String (BK-XXXXX)</text>
+
+      <text x="0" y="26" font-weight="800" fill="#D97706">FK</text>
+      <text x="35" y="26" font-weight="700" fill="#0F172A">userId</text>
+      <text x="260" y="26" fill="#2563EB">User.userId</text>
+
+      <text x="0" y="52" font-weight="800" fill="#D97706">FK</text>
+      <text x="35" y="52" font-weight="700" fill="#0F172A">typeId</text>
+      <text x="260" y="52" fill="#831843">RoomType.typeId</text>
+
+      <text x="0" y="78" font-weight="700" fill="#0F172A">assignedRoomNumber</text>
+      <text x="260" y="78" fill="#065F46" font-weight="700">String ('101, 102')</text>
+
+      <text x="0" y="104" font-weight="700" fill="#0F172A">preferredFloor</text>
+      <text x="260" y="104" fill="#2563EB">Enum ('any'|1|2|3)</text>
+
+      <text x="0" y="130" font-weight="700" fill="#0F172A">assignedFloor</text>
+      <text x="260" y="130" fill="#2563EB">Number (1, 2, 3)</text>
+
+      <text x="0" y="156" font-weight="700" fill="#0F172A">checkInDate</text>
+      <text x="260" y="156" fill="#DC2626" font-weight="700">Date (YYYY-MM-DD)</text>
+
+      <text x="0" y="182" font-weight="700" fill="#0F172A">checkOutDate</text>
+      <text x="260" y="182" fill="#DC2626" font-weight="700">Date (YYYY-MM-DD)</text>
+
+      <text x="0" y="208" font-weight="700" fill="#0F172A">stayPackage</text>
+      <text x="260" y="208" fill="#64748B">overnight|day|24h</text>
+
+      <text x="0" y="234" font-weight="700" fill="#0F172A">numberOfGuests</text>
+      <text x="260" y="234" fill="#059669" font-weight="700">Number (Total Head)</text>
+
+      <text x="0" y="260" font-weight="700" fill="#0F172A">adultsCount</text>
+      <text x="260" y="260" fill="#64748B">Number (12+ yrs)</text>
+
+      <text x="0" y="286" font-weight="700" fill="#0F172A">childrenCount</text>
+      <text x="260" y="286" fill="#64748B">Number (0-11 yrs)</text>
+
+      <text x="0" y="312" font-weight="700" fill="#0F172A">roomsCount</text>
+      <text x="260" y="312" fill="#64748B">Number (Rooms Req)</text>
+
+      <line x1="-5" y1="330" x2="390" y2="330" stroke="#E2E8F0" stroke-width="1.5"/>
+
+      <!-- Financial Snapshot Fields -->
+      <text x="0" y="352" font-weight="700" fill="#0F172A">customerName</text>
+      <text x="260" y="352" fill="#64748B">String (Snapshot)</text>
+
+      <text x="0" y="378" font-weight="700" fill="#0F172A">customerEmail</text>
+      <text x="260" y="378" fill="#64748B">String (Snapshot)</text>
+
+      <text x="0" y="404" font-weight="700" fill="#0F172A">roomTotal</text>
+      <text x="260" y="404" fill="#7B1123" font-weight="700">Number (₹ Base)</text>
+
+      <text x="0" y="430" font-weight="700" fill="#0F172A">taxAmount</text>
+      <text x="260" y="430" fill="#7B1123">Number (₹ GST)</text>
+
+      <text x="0" y="456" font-weight="800" fill="#0F172A">totalAmount</text>
+      <text x="260" y="456" fill="#7B1123" font-weight="800">Number (₹ Invoiced)</text>
+
+      <line x1="-5" y1="474" x2="390" y2="474" stroke="#E2E8F0" stroke-width="1.5"/>
+
+      <text x="0" y="496" font-weight="700" fill="#0F172A">bookingStatus</text>
+      <text x="260" y="496" fill="#059669" font-weight="700">Confirmed|CheckIn..</text>
+
+      <text x="0" y="522" font-weight="700" fill="#0F172A">paymentStatus</text>
+      <text x="260" y="522" fill="#D97706" font-weight="700">Pending|Paid|Refund</text>
+
+      <text x="0" y="548" font-weight="700" fill="#6D28D9">roomAllocations</text>
+      <text x="260" y="548" fill="#6D28D9" font-weight="700">Array&lt;SubDocument&gt;</text>
+
+      <text x="0" y="574" font-weight="700" fill="#0F172A">createdAt</text>
+      <text x="260" y="574" fill="#64748B">Date / Timestamp</text>
+    </g>
+  </g>
+
+
+  <!-- ENTITY 6: PAYMENT (Bottom Center) -->
+  <g transform="translate(940, 1010)" filter="url(#shadow)">
+    <rect x="0" y="0" width="360" height="280" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <path d="M 0 10 Q 0 0 10 0 L 350 0 Q 360 0 360 10 L 360 48 L 0 48 Z" fill="#B45309" />
+    <text x="18" y="31" font-size="17" font-weight="800" fill="#FFFFFF">PAYMENT</text>
+    <text x="340" y="30" font-size="12" font-weight="700" fill="#FDE68A" text-anchor="end">1 : 1 With Booking</text>
+    
+    <g transform="translate(18, 72)" font-size="13" font-family="monospace">
+      <text x="0" y="0" font-weight="800" fill="#DC2626">PK</text>
+      <text x="35" y="0" font-weight="700" fill="#0F172A">paymentId</text>
+      <text x="220" y="0" fill="#B45309" font-weight="800">PAY-XXXXX</text>
+
+      <text x="0" y="26" font-weight="800" fill="#2563EB">UQ/FK</text>
+      <text x="50" y="26" font-weight="700" fill="#0F172A">bookingId</text>
+      <text x="220" y="26" fill="#7B1123">Booking.bookingId</text>
+
+      <text x="0" y="52" font-weight="800" fill="#D97706">FK</text>
+      <text x="35" y="52" font-weight="700" fill="#0F172A">userId</text>
+      <text x="220" y="52" fill="#2563EB">User.userId</text>
+
+      <text x="0" y="78" font-weight="700" fill="#0F172A">amount</text>
+      <text x="220" y="78" fill="#059669" font-weight="700">Number (₹)</text>
+
+      <text x="0" y="104" font-weight="700" fill="#0F172A">method</text>
+      <text x="220" y="104" fill="#64748B">razorpay|cash|upi</text>
+
+      <text x="0" y="130" font-weight="700" fill="#0F172A">status</text>
+      <text x="220" y="130" fill="#059669" font-weight="700">Completed|Pending</text>
+
+      <text x="0" y="156" font-weight="700" fill="#0F172A">transactionRef</text>
+      <text x="220" y="156" fill="#64748B">Gateway Order ID</text>
+
+      <line x1="-5" y1="174" x2="330" y2="174" stroke="#F1F5F9" stroke-width="1.5"/>
+      <text x="0" y="192" font-size="11" font-family="sans-serif" fill="#64748B">Strict 1:1 settlement mapping</text>
+    </g>
+  </g>
+
+
+  <!-- ENTITY 7: USER (Top Right) -->
+  <g transform="translate(1430, 110)" filter="url(#shadow)">
+    <rect x="0" y="0" width="360" height="320" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <path d="M 0 10 Q 0 0 10 0 L 350 0 Q 360 0 360 10 L 360 48 L 0 48 Z" fill="#1D4ED8" />
+    <text x="18" y="31" font-size="17" font-weight="800" fill="#FFFFFF">USER</text>
+    <text x="340" y="30" font-size="12" font-weight="700" fill="#BFDBFE" text-anchor="end">Authentication &amp; RBAC</text>
+    
+    <g transform="translate(18, 72)" font-size="13" font-family="monospace">
+      <text x="0" y="0" font-weight="800" fill="#DC2626">PK</text>
+      <text x="35" y="0" font-weight="700" fill="#0F172A">userId</text>
+      <text x="220" y="0" fill="#64748B">ObjectId / String</text>
+
+      <text x="0" y="26" font-weight="700" fill="#0F172A">name</text>
+      <text x="220" y="26" fill="#64748B">String (Full Name)</text>
+
+      <text x="0" y="52" font-weight="800" fill="#2563EB">UQ</text>
+      <text x="35" y="52" font-weight="700" fill="#0F172A">email</text>
+      <text x="220" y="52" fill="#1D4ED8" font-weight="700">String (Unique)</text>
+
+      <text x="0" y="78" font-weight="700" fill="#0F172A">passwordHash</text>
+      <text x="220" y="78" fill="#DC2626">Bcrypt (10 Salt)</text>
+
+      <text x="0" y="104" font-weight="700" fill="#0F172A">role</text>
+      <text x="220" y="104" fill="#7B1123" font-weight="800">cust|recep|mgr</text>
+
+      <text x="0" y="130" font-weight="700" fill="#0F172A">phone</text>
+      <text x="220" y="130" fill="#64748B">String (+91..)</text>
+
+      <text x="0" y="156" font-weight="700" fill="#0F172A">isActive</text>
+      <text x="220" y="156" fill="#059669">Boolean (true)</text>
+
+      <text x="0" y="182" font-weight="700" fill="#0F172A">createdAt</text>
+      <text x="220" y="182" fill="#64748B">Date</text>
+
+      <line x1="-5" y1="200" x2="330" y2="200" stroke="#F1F5F9" stroke-width="1.5"/>
+      <text x="0" y="218" font-size="11" font-family="sans-serif" fill="#64748B">3 Roles: Customer, Receptionist, Manager</text>
+    </g>
+  </g>
+
+
+  <!-- ENTITY 8: REVIEW (Middle Right) -->
+  <g transform="translate(1430, 520)" filter="url(#shadow)">
+    <rect x="0" y="0" width="360" height="280" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <path d="M 0 10 Q 0 0 10 0 L 350 0 Q 360 0 360 10 L 360 48 L 0 48 Z" fill="#0F766E" />
+    <text x="18" y="31" font-size="17" font-weight="800" fill="#FFFFFF">REVIEW</text>
+    <text x="340" y="30" font-size="12" font-weight="700" fill="#99F6E4" text-anchor="end">Verified Guest Rating</text>
+    
+    <g transform="translate(18, 72)" font-size="13" font-family="monospace">
+      <text x="0" y="0" font-weight="800" fill="#DC2626">PK</text>
+      <text x="35" y="0" font-weight="700" fill="#0F172A">reviewId</text>
+      <text x="220" y="0" fill="#64748B">String (REV-..)</text>
+
+      <text x="0" y="26" font-weight="800" fill="#2563EB">UQ/FK</text>
+      <text x="50" y="26" font-weight="700" fill="#0F172A">bookingId</text>
+      <text x="220" y="26" fill="#7B1123">Booking.bookingId</text>
+
+      <text x="0" y="52" font-weight="800" fill="#D97706">FK</text>
+      <text x="35" y="52" font-weight="700" fill="#0F172A">userId</text>
+      <text x="220" y="52" fill="#2563EB">User.userId</text>
+
+      <text x="0" y="78" font-weight="700" fill="#0F172A">rating</text>
+      <text x="220" y="78" fill="#F59E0B" font-weight="800">Number (1 to 5 ★)</text>
+
+      <text x="0" y="104" font-weight="700" fill="#0F172A">comment</text>
+      <text x="220" y="104" fill="#64748B">String (Feedback)</text>
+
+      <text x="0" y="130" font-weight="700" fill="#0F172A">createdAt</text>
+      <text x="220" y="130" fill="#64748B">Date</text>
+
+      <line x1="-5" y1="154" x2="330" y2="154" stroke="#F1F5F9" stroke-width="1.5"/>
+      <text x="0" y="172" font-size="11" font-family="sans-serif" fill="#64748B">Strict 1:0..1 prevents duplicate spam</text>
+    </g>
+  </g>
+
+
+  <!-- ENTITY 9: NOTIFICATION (Far Right) -->
+  <g transform="translate(1870, 110)" filter="url(#shadow)">
+    <rect x="0" y="0" width="340" height="260" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <path d="M 0 10 Q 0 0 10 0 L 330 0 Q 340 0 340 10 L 340 48 L 0 48 Z" fill="#475569" />
+    <text x="18" y="31" font-size="17" font-weight="800" fill="#FFFFFF">NOTIFICATION</text>
+    <text x="320" y="30" font-size="12" font-weight="700" fill="#E2E8F0" text-anchor="end">Alert Center</text>
+    
+    <g transform="translate(18, 72)" font-size="13" font-family="monospace">
+      <text x="0" y="0" font-weight="800" fill="#DC2626">PK</text>
+      <text x="35" y="0" font-weight="700" fill="#0F172A">notificationId</text>
+      <text x="210" y="0" fill="#64748B">String (NOT-..)</text>
+
+      <text x="0" y="26" font-weight="800" fill="#D97706">FK</text>
+      <text x="35" y="26" font-weight="700" fill="#0F172A">userId</text>
+      <text x="210" y="26" fill="#2563EB">User.userId</text>
+
+      <text x="0" y="52" font-weight="700" fill="#0F172A">type</text>
+      <text x="210" y="52" fill="#64748B">booking|checkin..</text>
+
+      <text x="0" y="78" font-weight="700" fill="#0F172A">title</text>
+      <text x="210" y="78" fill="#64748B">String</text>
+
+      <text x="0" y="104" font-weight="700" fill="#0F172A">message</text>
+      <text x="210" y="104" fill="#64748B">String</text>
+
+      <text x="0" y="130" font-weight="700" fill="#0F172A">isRead</text>
+      <text x="210" y="130" fill="#059669">Boolean</text>
+
+      <line x1="-5" y1="148" x2="310" y2="148" stroke="#F1F5F9" stroke-width="1.5"/>
+      <text x="0" y="166" font-size="11" font-family="sans-serif" fill="#64748B">Dispatched on booking &amp; check-in</text>
+    </g>
+  </g>
+
+
+  <!-- ENTITY 10: HOTEL_CONFIG (Far Right Middle) -->
+  <g transform="translate(1870, 420)" filter="url(#shadow)">
+    <rect x="0" y="0" width="340" height="230" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <path d="M 0 10 Q 0 0 10 0 L 330 0 Q 340 0 340 10 L 340 48 L 0 48 Z" fill="#1E293B" />
+    <text x="18" y="31" font-size="17" font-weight="800" fill="#FFFFFF">HOTEL_CONFIG</text>
+    <text x="320" y="30" font-size="12" font-weight="700" fill="#94A3B8" text-anchor="end">Single Property</text>
+    
+    <g transform="translate(18, 72)" font-size="13" font-family="monospace">
+      <text x="0" y="0" font-weight="800" fill="#DC2626">PK</text>
+      <text x="35" y="0" font-weight="700" fill="#0F172A">configId</text>
+      <text x="210" y="0" fill="#64748B">String</text>
+
+      <text x="0" y="26" font-weight="700" fill="#0F172A">propertyName</text>
+      <text x="210" y="26" fill="#7B1123" font-weight="700">Saravana Grand</text>
+
+      <text x="0" y="52" font-weight="700" fill="#0F172A">totalFloors</text>
+      <text x="210" y="52" fill="#2563EB" font-weight="700">3 Floors</text>
+
+      <text x="0" y="78" font-weight="700" fill="#0F172A">totalPhysicalRooms</text>
+      <text x="210" y="78" fill="#059669" font-weight="700">20 Rooms</text>
+
+      <text x="0" y="104" font-weight="700" fill="#0F172A">taxRatePercent</text>
+      <text x="210" y="104" fill="#64748B">12% / 18%</text>
+
+      <line x1="-5" y1="122" x2="310" y2="122" stroke="#F1F5F9" stroke-width="1.5"/>
+      <text x="0" y="140" font-size="11" font-family="sans-serif" fill="#64748B">Global Property Configuration</text>
+    </g>
+  </g>
+
+
+  <!-- ==================== LEGEND & CARDINALITY GUIDE BOX ==================== -->
+  <g transform="translate(1430, 850)" filter="url(#shadow)">
+    <rect x="0" y="0" width="780" height="490" rx="12" fill="#FFFFFF" stroke="#0F172A" stroke-width="2"/>
+    <path d="M 0 12 Q 0 0 12 0 L 768 0 Q 780 0 780 12 L 780 48 L 0 48 Z" fill="#0F172A" />
+    <text x="20" y="32" font-size="16" font-weight="800" fill="#FFFFFF">CARDINALITY &amp; NOTATION GUIDE (INTERVIEW &amp; VIVA REFERENCE)</text>
+
+    <g transform="translate(25, 75)" font-family="sans-serif">
+      <!-- 1 : 1 -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="60" height="24" rx="12" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+        <text x="30" y="16" font-size="12" font-weight="800" fill="#92400E" text-anchor="middle">1 : 1</text>
+        <text x="75" y="16" font-size="14" font-weight="700" fill="#0F172A">One-to-One</text>
+        <text x="200" y="16" font-size="13" fill="#475569">Each Booking has exactly 1 Payment settlement record.</text>
+      </g>
+
+      <!-- 1 : N -->
+      <g transform="translate(0, 36)">
+        <rect x="0" y="0" width="60" height="24" rx="12" fill="#FCE7F3" stroke="#831843" stroke-width="1.5"/>
+        <text x="30" y="16" font-size="12" font-weight="800" fill="#831843" text-anchor="middle">1 : N</text>
+        <text x="75" y="16" font-size="14" font-weight="700" fill="#0F172A">One-to-Many</text>
+        <text x="200" y="16" font-size="13" fill="#475569">One User places multiple Bookings; One RoomType has multiple Rooms.</text>
+      </g>
+
+      <!-- M : N -->
+      <g transform="translate(0, 72)">
+        <rect x="0" y="0" width="60" height="24" rx="12" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.5"/>
+        <text x="30" y="16" font-size="12" font-weight="800" fill="#5B21B6" text-anchor="middle">M : N</text>
+        <text x="75" y="16" font-size="14" font-weight="700" fill="#0F172A">Many-to-Many</text>
+        <text x="200" y="16" font-size="13" fill="#475569">Resolved via Bridge Entity (<tspan font-weight="700" fill="#6D28D9">ROOM_ALLOCATION</tspan>) between Booking &amp; Room.</text>
+      </g>
+
+      <!-- 1 : 0..1 -->
+      <g transform="translate(0, 108)">
+        <rect x="0" y="0" width="60" height="24" rx="12" fill="#CCFBF1" stroke="#0D9488" stroke-width="1.5"/>
+        <text x="30" y="16" font-size="11" font-weight="800" fill="#0F766E" text-anchor="middle">1:0..1</text>
+        <text x="75" y="16" font-size="14" font-weight="700" fill="#0F172A">One-to-Optional</text>
+        <text x="200" y="16" font-size="13" fill="#475569">Each completed stay can have at most 1 verified Review (Anti-Fraud).</text>
+      </g>
+
+      <line x1="0" y1="145" x2="730" y2="145" stroke="#E2E8F0" stroke-width="1.5"/>
+
+      <!-- Badges guide -->
+      <g transform="translate(0, 160)">
+        <text x="0" y="18" font-size="14" font-weight="800" fill="#0F172A">SCHEMA KEYS &amp; CONSTRAINTS:</text>
+        
+        <g transform="translate(0, 32)">
+          <rect x="0" y="0" width="36" height="20" rx="4" fill="#FEE2E2"/>
+          <text x="18" y="14" font-size="11" font-weight="800" fill="#DC2626" text-anchor="middle">PK</text>
+          <text x="45" y="15" font-size="13" fill="#334155"><tspan font-weight="700">Primary Key</tspan>: Unique identifier for the collection document.</text>
+        </g>
+
+        <g transform="translate(0, 60)">
+          <rect x="0" y="0" width="36" height="20" rx="4" fill="#FEF3C7"/>
+          <text x="18" y="14" font-size="11" font-weight="800" fill="#D97706" text-anchor="middle">FK</text>
+          <text x="45" y="15" font-size="13" fill="#334155"><tspan font-weight="700">Foreign Key</tspan>: Logical document reference establishing relational integrity.</text>
+        </g>
+
+        <g transform="translate(0, 88)">
+          <rect x="0" y="0" width="36" height="20" rx="4" fill="#DBEAFE"/>
+          <text x="18" y="14" font-size="11" font-weight="800" fill="#2563EB" text-anchor="middle">UQ</text>
+          <text x="45" y="15" font-size="13" fill="#334155"><tspan font-weight="700">Unique Key Index</tspan>: Prevents duplicated emails, room numbers, or review spam.</text>
+        </g>
+      </g>
+
+      <line x1="0" y1="285" x2="730" y2="285" stroke="#E2E8F0" stroke-width="1.5"/>
+
+      <!-- Physical Inventory Note -->
+      <g transform="translate(0, 305)">
+        <text x="0" y="16" font-size="13" font-weight="800" fill="#7B1123">PROPERTY INVENTORY SUMMARY (HOTEL SARAVANA GRAND):</text>
+        <text x="0" y="38" font-size="12" fill="#475569">• Floor 1: Standard Rooms (Rooms 101 to 110 | Max 3 Guests | ₹999/night | ₹1,399/day)</text>
+        <text x="0" y="58" font-size="12" fill="#475569">• Floor 2: Deluxe Rooms (Rooms 201 to 206 | Max 5 Guests | ₹1,199/night | ₹1,500/day)</text>
+        <text x="0" y="78" font-size="12" fill="#475569">• Floor 3: Premium Suites (Rooms 301 to 304 | Max 9 Guests | Balcony + 2 Attached Rooms | ₹2,000/night)</text>
+      </g>
+    </g>
+  </g>
+
+</svg>
+    </div>
+  </div>
+</body>
+</html>
